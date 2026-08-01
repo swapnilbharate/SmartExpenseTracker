@@ -1,0 +1,362 @@
+/* Styling variables - Custom Maharashtrian Kesari & Gold Theme */
+:root {
+  --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  /* Warm Saffron & Gold Light Theme */
+  --bg-gradient: linear-gradient(135deg, #fffdfa 0%, #fef3c7 100%);
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(217, 119, 6, 0.2);
+  --text-main: #2d1a08;
+  --text-muted: #7c5e43;
+  --primary: #ea580c; /* Kesari (Saffron) */
+  --primary-hover: #c2410c;
+  --success: #15803d; /* Vibrant Green */
+  --danger: #b91c1c; /* Kumkum Red */
+  --warning: #d97706; /* Suvarna (Gold) */
+  --glass-shadow: 0 8px 32px 0 rgba(124, 45, 18, 0.06);
+  --input-bg: rgba(255, 255, 255, 0.95);
+  --input-border: #cbd5e1;
+  --table-hover: rgba(124, 45, 18, 0.02);
+  --card-glow-income: rgba(21, 128, 61, 0.06);
+  --card-glow-expense: rgba(185, 28, 28, 0.06);
+  --card-glow-balance: rgba(234, 88, 12, 0.06);
+}
+
+body.dark {
+  /* Royal Dark Saffron copper theme */
+  --bg-gradient: linear-gradient(135deg, #0e0502 0%, #1e0b04 50%, #070201 100%);
+  --card-bg: rgba(26, 12, 6, 0.8);
+  --card-border: rgba(234, 88, 12, 0.15);
+  --text-main: #faf5f0;
+  --text-muted: #bda38f;
+  --primary: #ff7e39; /* Glowing Saffron */
+  --primary-hover: #ea580c;
+  --success: #34d399;
+  --danger: #f87171;
+  --warning: #fbbf24;
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+  --input-bg: rgba(38, 18, 10, 0.7);
+  --input-border: rgba(234, 88, 12, 0.2);
+  --table-hover: rgba(255, 255, 255, 0.02);
+  --card-glow-income: rgba(52, 211, 153, 0.08);
+  --card-glow-expense: rgba(248, 113, 113, 0.08);
+  --card-glow-balance: rgba(255, 126, 57, 0.08);
+}
+
+/* Global Reset & Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--bg-gradient);
+  color: var(--text-main);
+  min-height: 100vh;
+  transition: background 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(234, 88, 12, 0.2);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(234, 88, 12, 0.4);
+}
+
+/* Glassmorphism Styles */
+.glass-panel {
+  background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+              background 0.4s ease, border-color 0.4s ease;
+}
+
+.glass-panel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px 0 rgba(234, 88, 12, 0.08);
+}
+
+body.dark .glass-panel:hover {
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.6);
+}
+
+/* Paithani Gold Zari Accent Border */
+.paithani-accent {
+  height: 4px;
+  background: linear-gradient(90deg, #ea580c 0%, #fbbf24 30%, #15803d 50%, #fbbf24 70%, #ea580c 100%);
+  border-radius: 2px;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 4px rgba(234, 88, 12, 0.2);
+}
+
+/* Animations */
+.fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navigation bar styling */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.5) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--card-border);
+  transition: background 0.4s ease, border-color 0.4s ease;
+  z-index: 1000;
+}
+
+body.dark .glass-nav {
+  background: rgba(26, 12, 6, 0.5) !important;
+}
+
+/* Typography elements */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
+/* Stat Cards with subtle saffron/gold/green glows */
+.stat-card-income {
+  background: linear-gradient(135deg, rgba(21, 128, 97, 0.08) 0%, rgba(21, 128, 97, 0.02) 100%);
+  border: 1px solid rgba(21, 128, 97, 0.15);
+  box-shadow: 0 8px 32px 0 var(--card-glow-income);
+}
+.stat-card-expense {
+  background: linear-gradient(135deg, rgba(185, 28, 28, 0.08) 0%, rgba(185, 28, 28, 0.02) 100%);
+  border: 1px solid rgba(185, 28, 28, 0.15);
+  box-shadow: 0 8px 32px 0 var(--card-glow-expense);
+}
+.stat-card-balance {
+  background: linear-gradient(135deg, rgba(234, 88, 12, 0.08) 0%, rgba(234, 88, 12, 0.02) 100%);
+  border: 1px solid rgba(234, 88, 12, 0.15);
+  box-shadow: 0 8px 32px 0 var(--card-glow-balance);
+}
+
+/* Custom styled inputs and controls */
+.form-control, .form-select {
+  background-color: var(--input-bg) !important;
+  color: var(--text-main) !important;
+  border: 1px solid var(--input-border) !important;
+  border-radius: 10px !important;
+  padding: 10px 14px !important;
+  font-size: 0.95rem !important;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.3s ease !important;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--primary) !important;
+  box-shadow: 0 0 0 3px rgba(234, 88, 12, 0.18) !important;
+  outline: none !important;
+}
+
+.form-control::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 0.7;
+}
+
+/* Tab Switcher */
+.type-tab-container {
+  display: flex;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  padding: 4px;
+  margin-bottom: 20px;
+}
+
+body.dark .type-tab-container {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.type-tab {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  color: var(--text-muted);
+}
+
+.type-tab.active-income {
+  background: var(--success);
+  color: #ffffff;
+}
+
+.type-tab.active-expense {
+  background: var(--primary);
+  color: #ffffff;
+}
+
+/* Premium Buttons */
+.btn-primary-custom {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  width: 100%;
+}
+
+.btn-primary-custom:hover {
+  background: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(234, 88, 12, 0.25);
+}
+
+.btn-danger-custom {
+  background: var(--danger);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-weight: 600;
+  transition: all 0.25s ease;
+}
+
+.btn-danger-custom:hover {
+  background: #991b1b;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(185, 28, 28, 0.25);
+}
+
+/* Modern Transaction Cards */
+.transaction-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  transition: all 0.25s ease;
+}
+
+.transaction-card:hover {
+  transform: translateX(4px);
+}
+
+.category-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  margin-right: 14px;
+}
+
+/* Category specific colors (Indian Saffron/Marigold/Green/Suvarna vibes) */
+.bg-food-light { background: rgba(217, 119, 6, 0.12); color: #b45309; }
+.bg-travel-light { background: rgba(37, 99, 235, 0.12); color: #1d4ed8; }
+.bg-shopping-light { background: rgba(219, 39, 119, 0.12); color: #be185d; }
+.bg-bills-light { background: rgba(109, 40, 217, 0.12); color: #6d28d9; }
+.bg-salary-light { background: rgba(21, 128, 61, 0.12); color: #15803d; }
+.bg-freelance-light { background: rgba(13, 148, 136, 0.12); color: #0f766e; }
+.bg-investment-light { background: rgba(234, 88, 12, 0.12); color: #c2410c; }
+.bg-other-light { background: rgba(107, 114, 128, 0.12); color: #4b5563; }
+
+/* Dark mode category icons */
+body.dark .bg-food-light { background: rgba(245, 158, 11, 0.22); color: #fbbf24; }
+body.dark .bg-travel-light { background: rgba(59, 130, 246, 0.22); color: #60a5fa; }
+body.dark .bg-shopping-light { background: rgba(236, 72, 153, 0.22); color: #f472b6; }
+body.dark .bg-bills-light { background: rgba(167, 139, 250, 0.22); color: #c084fc; }
+body.dark .bg-salary-light { background: rgba(52, 211, 153, 0.22); color: #34d399; }
+body.dark .bg-freelance-light { background: rgba(45, 212, 191, 0.22); color: #2dd4bf; }
+body.dark .bg-investment-light { background: rgba(251, 146, 60, 0.22); color: #fdba74; }
+body.dark .bg-other-light { background: rgba(156, 163, 175, 0.22); color: #d1d5db; }
+
+/* Progress bar stylings */
+.budget-progress-container {
+  height: 8px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 12px 0;
+}
+
+body.dark .budget-progress-container {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.budget-progress-bar {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 0.5s ease, background-color 0.3s ease;
+}
+
+/* Charts Styles */
+.chart-card {
+  background: var(--card-bg) !important;
+  border: 1px solid var(--card-border) !important;
+  box-shadow: var(--glass-shadow) !important;
+  border-radius: 16px !important;
+}
+
+/* Auth Cards Custom Styles */
+.auth-card {
+  max-width: 440px !important;
+  margin: 80px auto !important;
+  padding: 40px !important;
+}
+
+/* Tables styling */
+.table {
+  color: var(--text-main) !important;
+  vertical-align: middle !important;
+  --bs-table-bg: transparent !important;
+  --bs-table-hover-bg: var(--table-hover) !important;
+  border-color: var(--card-border) !important;
+}
+
+.table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  border-bottom-width: 2px !important;
+}
+
+/* Responsive grids */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 992px) {
+  .dashboard-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
