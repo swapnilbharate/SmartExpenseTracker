@@ -1,5 +1,7 @@
 # 💸 MahaSpend (SmartExpenseTracker)
 
+**🚀 Live Demo:** [https://smartexpensetracker-oajs.onrender.com](https://smartexpensetracker-oajs.onrender.com)
+
 MahaSpend is a modern, responsive, and beautifully animated Expense Tracker application built with React and Vite. It helps you track your wealth, manage your budget, and visualize your financial health with an intuitive user interface inspired by Swarajya themes and Paithani aesthetics.
 
 ## ✨ Features
