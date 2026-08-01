@@ -15,13 +15,12 @@ MahaSpend is a modern, responsive, and beautifully animated Expense Tracker appl
 
 ## 📸 Screenshots
 
-*(To display the screenshots properly, you can upload them directly in the GitHub web interface by editing this README, or place them in a `screenshots` folder)*
 
 ### Dashboard & Analytics
-![Dashboard](./screenshots/dashboard1.png)
+<img width="1907" height="812" alt="Screenshot 2026-08-01 194139" src="https://github.com/user-attachments/assets/c493ef77-d7a2-47ff-b9b9-9ce3d98fd919" />
 
 ### Recent Transactions
-![Transactions](./screenshots/dashboard2.png)
+<img width="1885" height="840" alt="Screenshot 2026-08-01 194202" src="https://github.com/user-attachments/assets/d7733578-ee0c-4da9-a874-956a5a68b350" />
 
 
 ## 🛠️ Technology Stack
